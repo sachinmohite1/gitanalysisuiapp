@@ -1,0 +1,56 @@
+.visualization-container {
+  width: 100%; /* w-full */
+  max-width: 80rem; /* max-w-6xl */
+  margin: 1rem auto; /* Reduced top and bottom margin */
+  padding: 1rem; /* p-4 */
+}
+
+.metric-card {
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow */
+  padding: 1rem; /* Reduced padding to decrease card height */
+}
+
+.trust-score-card {
+  background-color: rgb(156, 244, 207); /* Different background color */
+}
+
+.total-commits-card {
+  background-color: rgb(164, 212, 255); /* Another background color */
+}
+
+.followers-card {
+  background-color: rgb(255, 229, 153); /* Another background color */
+}
+
+/* Ensure the grid layout works as intended */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.md\:grid-cols-3 {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gap-4 {
+  gap: 0.5rem; /* Reduced gap between grid items to decrease row height */
+}
+
+.metric-icon {
+  font-size: 3rem; /* Increased icon size */
+}
+
+.metric-label {
+  font-size: 1.5rem; /* Increased label size */
+}
+
+.metric-value {
+  font-size: 2.5rem; /* Increased value size */
+  font-weight: bold; /* Retain the bold font style */
+}

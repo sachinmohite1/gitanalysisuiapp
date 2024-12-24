@@ -1,0 +1,29 @@
+<div class="chart-card">
+  <h3 class="chart-title">Activity Metrics</h3>
+  <div class="chart-container">
+    <ngx-charts-bar-vertical
+      [results]="chartData"
+      [scheme]="colorScheme"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Metrics'"
+      [yAxisLabel]="'Value'"
+      [gradient]="false"
+      [showGridLines]="true"
+      [barPadding]="8"
+      [legend]="true"
+      [legendTitle]="'Metrics'"
+      [legendPosition]="LegendPosition.Right"
+      [roundDomains]="true"
+      [animations]="true"
+      [noBarWhenZero]="true"
+      [trimXAxisTicks]="false"
+      [maxXAxisTickLength]="30"
+      [tooltipDisabled]="false"
+      [customColors]="customColors"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+</div>

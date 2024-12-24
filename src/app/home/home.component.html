@@ -1,0 +1,101 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  
+    <button mat-button (click)="opened=!opened">
+      <mat-icon style="color: rgb(0, 255, 140);">menu</mat-icon> 
+    </button>
+
+    <button mat-button >
+      <mat-icon style="color: red;">home</mat-icon> GitHub User's Trusted Rating System
+    </button>
+    <span class="spacer"></span>
+   <!-- User Profile Dropdown -->
+<button mat-button [matMenuTriggerFor]="accountMenu">
+  <mat-icon>account_circle</mat-icon>
+  <span *ngIf="currentUser$ | async as user">{{ user.user_metadata['user_name'] }}</span>
+</button>
+
+<!-- Dropdown Menu -->
+<mat-menu #accountMenu="matMenu">
+  <!-- If user is not logged in, show the login option -->
+  <ng-container *ngIf="!(currentUser$ | async); else loggedInMenu">
+    <button 
+      mat-menu-item 
+      (click)="login()" 
+      [disabled]="loading">
+      <mat-icon>{{ loading ? 'hourglass_empty' : 'login' }}</mat-icon>
+      <span>{{ loading ? 'Logging in...' : 'Login with GitHub' }}</span>
+    </button>
+  </ng-container>
+
+  <!-- If user is logged in, show additional menu items -->
+  <ng-template #loggedInMenu>
+    <button mat-menu-item disabled>
+      <span>WELCOME!</span>
+    </button>
+    <button mat-menu-item [routerLink]="['/home/profile']">
+      <mat-icon>person</mat-icon>
+      <span>My Profile!</span>
+    </button>
+    <button mat-menu-item (click)="goToSettings()">
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item (click)="goToActivity()">
+      <mat-icon>history</mat-icon>
+      <span>Activity</span>
+    </button>
+    <button mat-menu-item (click)="goToSupport()">
+      <mat-icon>help</mat-icon>
+      <span>Support</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="logout()" [disabled]="loading">
+      <mat-icon>{{ loading ? 'hourglass_empty' : 'logout' }}</mat-icon>
+      <span>{{ loading ? 'Logging out...' : 'Logout' }}</span>
+    </button>
+  </ng-template>
+</mat-menu>
+
+    
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container style="height: calc(100vh - 64px);">
+  <mat-sidenav [(opened)]="opened" mode="side">
+    <mat-list>
+      <mat-list-item>
+        <a routerLink="/home/dashboard" style="text-decoration: none;" routerLinkActive="active">Dashboard</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/home/ratings" style="text-decoration: none;">Ratings</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/home/repos" style="text-decoration: none;">Repository</a>
+      </mat-list-item>
+      <mat-list-item (click)="toggleWalletsSubmenu()">
+        <a style="text-decoration: none;">Wallets</a>
+        <mat-icon>{{ isMetaMaskConnected ? 'check_circle' : 'warning' }}</mat-icon>
+      </mat-list-item>
+      <div *ngIf="showWalletsSubmenu" class="wallets-submenu" style="padding-left: 10px;">
+        <mat-list-item *ngIf="!isMetaMaskConnected" (click)="integrateWithMetaMask()" style="cursor: pointer;">
+          <mat-icon>link</mat-icon>
+          Connect MetaMask
+        </mat-list-item>
+        <mat-list-item *ngIf="isMetaMaskConnected" (click)="signOutFromMetaMask()" style="cursor: pointer;">
+          <mat-icon>link_off</mat-icon>
+          Disconnect MetaMask
+        </mat-list-item>
+      </div>
+
+    </mat-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

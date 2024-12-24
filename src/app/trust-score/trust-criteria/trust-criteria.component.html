@@ -1,0 +1,25 @@
+<div class="criteria-card">
+  <h3 class="criteria-title">Trust Criteria Met</h3>
+  <ul class="criteria-list">
+    <li *ngFor="let criterion of criteria" class="criterion-item">
+      <i [ngClass]="{
+          'icon-green': criterion === 'Basic account verification',
+          'icon-blue': criterion === 'Consistent contribution history',
+          'icon-yellow': criterion === 'High number of followers',
+          'icon-red': criterion === 'Active participation in discussions'
+        }" class="shield-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 15l-4-4h8l-4 4zm0-5l-4-4h8l-4 4zm0 0l-4 4h8l-4-4z" />
+        </svg>
+      </i>
+      <span [ngClass]="{
+          'text-green': criterion === 'Basic account verification',
+          'text-blue': criterion === 'Consistent contribution history',
+          'text-yellow': criterion === 'High number of followers',
+          'text-red': criterion === 'Active participation in discussions'
+        }">
+        {{ criterion }}
+      </span>
+    </li>
+  </ul>
+</div>

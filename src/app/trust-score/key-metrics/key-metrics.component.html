@@ -1,0 +1,25 @@
+<div class="grid grid-cols-1 gap-2 md:grid-cols-3"> <!-- Reduced gap between columns -->
+  <div class="metric-card trust-score-card p-4"> <!-- Reduced padding -->
+    <i class="fas fa-check-circle metric-icon text-blue-500 text-5xl"></i>
+    <div class="flex-1 metric-details">
+      <p class="metric-label text-lg text-gray-700">Trust Score</p>
+      <p class="metric-value text-3xl font-bold text-blue-600">{{data.trustworthiness_score}}/3</p>
+    </div>
+  </div>
+
+  <div class="metric-card total-commits-card p-4"> <!-- Reduced padding -->
+    <i class="fas fa-code-branch metric-icon text-green-500 text-5xl"></i>
+    <div class="flex-1 metric-details">
+      <p class="metric-label text-lg text-gray-700">Total Commits</p>
+      <p class="metric-value text-3xl font-bold text-green-600">{{data.commits.toLocaleString()}}</p>
+    </div>
+  </div>
+
+  <div class="metric-card followers-card p-4"> <!-- Reduced padding -->
+    <i class="fas fa-user-friends metric-icon text-yellow-500 text-5xl"></i>
+    <div class="flex-1 metric-details">
+      <p class="metric-label text-lg text-gray-700">Followers</p>
+      <p class="metric-value text-3xl font-bold text-yellow-600">{{data.followers.toLocaleString()}}</p>
+    </div>
+  </div>
+</div>

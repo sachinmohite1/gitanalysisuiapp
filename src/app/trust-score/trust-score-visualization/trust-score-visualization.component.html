@@ -1,0 +1,40 @@
+<div class="visualization-container">
+  <!-- MetaMask Connection Button -->
+  <div *ngIf="!isMetaMaskConnected" class="metamask-section">
+    <button (click)="connectToMetaMask()" class="metamask-button">
+      Connect MetaMask
+    </button>
+  </div>
+
+  <!-- Main Visualization Content -->
+  <ng-container *ngIf="data && !loading">
+    <app-trust-score-header 
+    [data]="data" 
+    [isEmptyProfile]="isEmptyProfile">
+  </app-trust-score-header>
+    <app-key-metrics [data]="data"></app-key-metrics>
+    <app-metrics-chart [data]="data"></app-metrics-chart>
+    <app-trust-criteria [criteria]="data.criteria"></app-trust-criteria>
+  </ng-container>
+
+  <!-- Loading Message -->
+  <div *ngIf="loading" class="loading-message">
+    <p>Analyzing GitHub profile...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="error-message">
+    {{error}}
+  </div>
+
+  <!-- Analyzing Popup -->
+   <!--
+  <div *ngIf="showAnalyzingPopup" class="popup-overlay">
+    <div class="popup-content">
+      <div class="spinner"></div>
+      <h3>Analyzing GitHub Repositories</h3>
+      <p>Please wait while we analyze your repositories and calculate trust score...</p>
+    </div>
+  </div>
+  -->
+</div>

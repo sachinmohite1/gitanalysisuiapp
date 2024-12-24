@@ -1,0 +1,7 @@
+.app-container {
+  @apply p-4 max-w-6xl mx-auto;
+}
+
+.app-title {
+  @apply text-3xl font-bold text-center mb-8;
+}

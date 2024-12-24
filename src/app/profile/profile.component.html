@@ -1,0 +1,115 @@
+<div class="profile-container">
+  <!-- Loading Spinner -->
+  <div *ngIf="loading" class="spinner-container">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <!-- Profile Content -->
+  <ng-container *ngIf="profile && !loading">
+    <!-- Profile Header -->
+    <mat-card>
+      <mat-card-content>
+        <div class="flex flex-col items-center">
+          <!-- Avatar -->
+          <img [src]="profile.avatar_url"
+               [alt]="profile.name"
+               class="profile-avatar">
+          
+          <!-- Basic Info -->
+          <h1 class="text-2xl font-bold mb-2">{{ profile.name }}</h1>
+          <h2 class="text-xl text-gray-600 mb-2">{{ profile.login }}</h2>
+          <p *ngIf="profile.bio" class="text-gray-700 mb-4 text-center">{{ profile.bio }}</p>
+          
+          <!-- Contact Info -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <div *ngIf="profile.location" class="flex items-center">
+              <mat-icon class="small-icon text-gray-500">location_on</mat-icon>
+              <span class="ml-2">{{ profile.location }}</span>
+            </div>
+            <div *ngIf="profile.email" class="flex items-center">
+              <mat-icon class="small-icon text-gray-500">email</mat-icon>
+              <span class="ml-2">{{ profile.email }}</span>
+            </div>
+            <div *ngIf="profile.blog" class="flex items-center">
+              <mat-icon class="small-icon text-gray-500">link</mat-icon>
+              <a [href]="profile.blog" target="_blank" rel="noopener noreferrer"
+                 class="ml-2 text-blue-500 hover:text-blue-700">
+                {{ profile.blog }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Stats Grid 
+    <mat-card class="my-4">
+      <mat-card-content>
+        <h3 class="text-xl font-bold mb-4 text-center">Profile Statistics</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <mat-icon class="text-blue-500">folder</mat-icon>
+            <span class="text-gray-600">Repositories</span>
+            <span class="text-2xl font-bold">{{ profile.public_repos }}</span>
+          </div>
+          <div class="stat-item">
+            <mat-icon class="text-green-500">people</mat-icon>
+            <span class="text-gray-600">Followers</span>
+            <span class="text-2xl font-bold">{{ profile.followers }}</span>
+          </div>
+          <div class="stat-item">
+            <mat-icon class="text-purple-500">person_add</mat-icon>
+            <span class="text-gray-600">Following</span>
+            <span class="text-2xl font-bold">{{ profile.following }}</span>
+          </div>
+          <div class="stat-item">
+            <mat-icon class="text-yellow-500">code</mat-icon>
+            <span class="text-gray-600">Gists</span>
+            <span class="text-2xl font-bold">{{ profile.public_gists }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  -->
+    <!-- Account Information -->
+    <mat-card>
+      <mat-card-content>
+        <h3 class="text-xl font-bold mb-4 text-center">Account Information</h3>
+        <table class="info-table">
+          <tbody>
+            <tr>
+              <td>Account Type:</td>
+              <td>{{ profile.type }}</td>
+            </tr>
+            <tr>
+              <td>Created:</td>
+              <td>{{ formatDate(profile.created_at) }}</td>
+            </tr>
+            <tr>
+              <td>Last Updated:</td>
+              <td>{{ formatDate(profile.updated_at) }}</td>
+            </tr>
+            <tr *ngIf="profile.company">
+              <td>Company:</td>
+              <td>{{ profile.company }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- View Profile Button -->
+    <button mat-raised-button
+            color="primary"
+            (click)="openGithub(profile.html_url)"
+            class="github-button">
+      <mat-icon>launch</mat-icon>
+      View GitHub Profile
+    </button>
+  </ng-container>
+</div>

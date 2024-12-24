@@ -1,0 +1,129 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Custom Material Table Styles */
+.mat-mdc-table {
+  background: transparent;
+}
+
+/* Enhanced header styles */
+.mat-mdc-header-cell {
+  padding: 20px 16px;  /* Increased padding for better spacing */
+  font-size: 1rem !important;  /* Increased from 0.875rem */
+  font-weight: 700 !important;  /* Extra bold */
+  letter-spacing: 0.025em;
+  background: linear-gradient(to right, #4d89b9,  #4d89b9) !important; /* Rich blue gradient */
+  color: white !important;
+  text-transform: uppercase;
+}
+
+/* Enhanced cell styles */
+.mat-mdc-cell {
+  padding: 16px;
+  font-size: 0.95rem !important;  /* Slightly larger than default */
+  font-weight: 500 !important;  /* Medium weight for better readability */
+}
+
+/* Column widths */
+.mat-column-actions {
+  width: 80px;
+  text-align: center;
+}
+
+.mat-column-stars,
+.mat-column-forks,
+.mat-column-commits {
+  width: 120px;
+}
+
+.mat-column-last_commit {
+  width: 180px;
+}
+
+/* Enhanced row hover effect */
+.mat-mdc-row:hover {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Badge styles enhancement */
+.rounded-full {
+  font-weight: 600 !important;  /* Make badges bolder */
+  font-size: 0.9rem !important;  /* Slightly larger badge text */
+}
+
+/* Custom Material Form Field Styles */
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-wrapper {
+  margin: 0;
+}
+
+/* Custom Material Spinner Colors */
+.mat-mdc-progress-spinner.accent circle {
+  stroke: #3b82f6;
+}
+
+/* Custom Material Icon Button Styles */
+.mat-mdc-icon-button {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.mat-mdc-icon-button:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Enhanced Paginator Styles */
+.mat-mdc-paginator {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  background: linear-gradient(to right, #4d89b9,  #4d89b9) !important;
+  color: white !important;
+}
+
+.mat-mdc-paginator-page-size-label,
+.mat-mdc-paginator-range-label {
+  color: white !important;
+}
+
+/* Animation classes */
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

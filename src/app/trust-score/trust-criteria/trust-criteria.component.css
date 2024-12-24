@@ -1,0 +1,69 @@
+.criteria-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.criteria-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #2d3748; /* gray-800 */
+}
+
+.criteria-list {
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.criterion-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.shield-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.svg-icon {
+  width: 2rem; /* increased icon size */
+  height: 2rem; /* increased icon size */
+}
+
+.icon-green {
+  color: #48bb78; /* green-500 */
+}
+
+.icon-blue {
+  color: #4299e1; /* blue-500 */
+}
+
+.icon-yellow {
+  color: #ecc94b; /* yellow-500 */
+}
+
+.icon-red {
+  color: #f56565; /* red-500 */
+}
+
+.text-green {
+  color: #38a169; /* green-600 */
+}
+
+.text-blue {
+  color: #3182ce; /* blue-600 */
+}
+
+.text-yellow {
+  color: #d69e2e; /* yellow-600 */
+}
+
+.text-red {
+  color: #e53e3e; /* red-600 */
+}

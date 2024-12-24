@@ -1,0 +1,99 @@
+.header-card {
+  background-color: white; /* White background */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 1.5rem; /* Padding */
+  margin-bottom: 1.5rem; /* Space below the card */
+}
+
+.header-content {
+  display: flex; /* Flex layout */
+  justify-content: space-between; /* Space between columns */
+  align-items: flex-start; /* Align columns at the top */
+}
+
+.user-info {
+  flex: 0 0 80%; /* 80% width */
+}
+
+.confidence-container {
+  display: flex; /* Flex layout for confidence elements */
+  align-items: baseline; /* Align label and score */
+  margin-top: 0.5rem; /* Space above */
+}
+
+.confidence-label {
+  font-size: 1.125rem; /* Font size for label */
+  font-weight: bold; /* Bold text */
+  color: #4b5563; /* Dark gray color */
+  margin-right: 0.5rem; /* Space between label and score */
+}
+
+.confidence-score {
+  font-size: 1.5rem; /* Larger font size for score */
+  font-weight: bold; /* Bold text */
+  color: #38a169; /* Green color */
+  background-color: #e6fffa; /* Light background for the score */
+  padding: 0.25rem 0.5rem; /* Padding around score */
+  border-radius: 0.375rem; /* Rounded corners for score */
+}
+
+.description {
+  margin-top: 1rem; /* Space above description */
+  font-size: 1.125rem; /* Font size for description */
+  color: #374151; /* Dark gray color */
+}
+
+.trust-badge-container {
+  flex: 0 0 20%; /* 20% width */
+  display: flex; /* Center the badge */
+  justify-content: center; /* Center the badge horizontally */
+  align-items: center; /* Center the badge vertically */
+}
+
+.trust-badge {
+  display: block; /* Block display for badge */
+  text-align: center; /* Center text */
+  padding: 0.75rem 1.25rem; /* Padding around badge */
+  border-radius: 9999px; /* Fully rounded badge */
+  font-weight: bold; /* Bold text */
+  font-size: 1.1rem; /* Font size for badge */
+  color: white; /* Text color for badge */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.05rem; /* Spacing between letters */
+  position: relative; /* Positioning for shadow */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  background: linear-gradient(135deg, #34d399, #059669); /* Gradient for badge */
+  margin-top: 1.5rem; /* Space above badge */
+}
+
+/* Dynamic Badge Colors */
+.trust-badge.low {
+  background: linear-gradient(135deg, #ff7a7a, #e53e3e); /* Red gradient for low trust */
+}
+
+.trust-badge.medium {
+  background: linear-gradient(135deg, #ffd966, #ecc94b); /* Yellow gradient for medium trust */
+  color: #4a4a00; /* Dark color for medium trust */
+}
+
+.trust-badge.high {
+  background: linear-gradient(135deg, #34d399, #059669); /* Green gradient for high trust */
+}
+
+.trust-badge.excellent {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6); /* Blue gradient for excellent trust */
+}
+
+/* Optional Glow Effect */
+.trust-badge::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  border-radius: 9999px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Glow effect */
+  z-index: -1; /* Behind the badge */
+}

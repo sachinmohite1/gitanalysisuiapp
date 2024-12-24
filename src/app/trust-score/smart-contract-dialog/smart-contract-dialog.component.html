@@ -1,0 +1,16 @@
+<div class="p-4">
+    <h2 class="text-xl font-bold mb-4">Smart Contract Created Successfully</h2>
+    <div class="mb-4">
+      <p class="text-sm text-gray-600 mb-2">Transaction Hash:</p>
+      <div class="bg-gray-100 p-3 rounded text-sm font-mono break-all">
+        {{ data.transactionHash }}
+      </div>
+    </div>
+    <div class="flex justify-end">
+      <button mat-button 
+              (click)="dialogRef.close()"
+              class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        Close
+      </button>
+    </div>
+  </div>

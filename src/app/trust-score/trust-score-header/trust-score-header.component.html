@@ -1,0 +1,29 @@
+<div class="header-card">
+  <div class="header-content">
+    <!-- Column 1: User Info -->
+    <div class="column user-info">
+      <h2 class="title">Trust Analysis for {{ data.username }}</h2>
+      <div class="confidence-container">
+        <span class="confidence-label">Confidence Score:</span>
+        <span class="confidence-score">{{ (data.confidence * 100).toFixed(1) }}%</span>
+      </div>
+      <p class="description">{{ data.description }}</p>
+    </div>
+
+    <!-- Column 2: Trust Badge -->
+    <div class="column trust-badge-container flex flex-col items-center space-y-6">
+      <span class="trust-badge whitespace-nowrap text-center" [ngClass]="getTrustLevelColor[data.rating_level]">
+        {{ data.rating_level }}
+      </span>
+     
+      <!-- New Smart Contract Button -->
+     <!-- Smart Contract Button -->
+     <button
+     *ngIf="shouldShowSmartContractButton()"
+     (click)="createSmartContract()"
+     class="whitespace-nowrap w-auto px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-200">
+     Create Smart Contract
+   </button>
+    </div>
+  </div>
+</div>

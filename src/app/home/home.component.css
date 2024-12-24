@@ -1,0 +1,19 @@
+mat-sidenav-container {
+  height: calc(205vh-115vh);
+}
+mat-sidenav{
+  width: 220px;
+  background-color: #eee;
+}
+/* Adjust text size for submenu items */
+.mat-list-item {
+  font-size: 14px;
+  padding: 8px 16px; /* Adjust padding for better spacing */
+}
+.wallets-submenu {
+  font-size: 10px; /* Adjust this size as needed */
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

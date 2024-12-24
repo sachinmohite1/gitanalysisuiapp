@@ -1,0 +1,133 @@
+/* Custom color theme */
+:host {
+    --primary-color: #3f51b5;
+    --secondary-color: #f3f4ff;
+    --hover-color: #e8eaf6;
+    --stripe-color: #fafbff;
+    --text-primary: #2c3e50;
+    --text-secondary: #34495e;
+    --border-color: #c5cae9;
+  }
+  
+  /* Table container styling */
+  .mat-mdc-table {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Header row styling */
+  .mat-mdc-header-row {
+    background-color: var(--primary-color) !important;
+    min-height: 70px !important;
+  }
+  
+  /* Header cell styling */
+  .mat-mdc-header-cell {
+    color: white !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    padding: 16px !important;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Data row styling */
+  .mat-mdc-row {
+    min-height: 65px !important;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Striped rows */
+  .mat-mdc-row:nth-child(even) {
+    background-color: var(--stripe-color);
+  }
+  
+  /* Row hover effect */
+  .mat-mdc-row:hover {
+    background-color: var(--hover-color) !important;
+    cursor: pointer;
+  }
+  
+  /* Data cell styling - Increased font size and bold */
+  .mat-mdc-cell {
+    color: var(--text-secondary);
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    padding: 16px !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* Emphasized columns */
+  .date-cell {
+    color: var(--primary-color) !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+  }
+  
+  .trustworthiness-cell {
+    color: #2196f3 !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+  }
+  
+  .confidence-cell {
+    color: #2196f3 !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+  }
+  
+  .ipfs-cell {
+    font-family: monospace;
+    font-size: 15px !important;
+    word-break: break-all;
+  }
+  
+  /* Paginator styling */
+  .mat-mdc-paginator {
+    background-color: var(--secondary-color) !important;
+    border-top: 2px solid var(--border-color);
+    font-size: 16px !important;
+  }
+  
+  /* Custom cell styles for specific columns */
+  .confidence-cell {
+    color: #21f39c !important;
+    font-weight: 500;
+  }
+  
+  .trustworthiness-cell {
+    font-weight: 500;
+  }
+  
+  .date-cell {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+  }
+  
+  /* Loading spinner custom colors */
+  .mat-progress-spinner circle {
+    stroke: var(--primary-color) !important;
+  }
+  
+  /* Button styling */
+  .recalculate-button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    padding: 8px 24px !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .recalculate-button:hover {
+    background-color: #303f9f !important;
+    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3) !important;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    background-color: #ffebee !important;
+    color: #c62828 !important;
+    border-left: 4px solid #ef5350;
+  }
